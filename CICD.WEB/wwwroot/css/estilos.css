@@ -1,0 +1,25 @@
+﻿.swal2-title {
+    font-size: 19px !important;
+    padding-top: 2px !important;
+}
+
+.swal2-html-container {
+    font-size: 15px !important;
+}
+
+.swal2-icon {
+    font-size: 8px !important;
+}
+
+.swal2-popup {
+    width: 20rem;
+}
+.swal2-actions button {
+    font-size: 14px !important;
+}
+.swal2-actions{
+    margin-top: 4px !important;
+}
+div:where(.swal2-container).swal2-backdrop-show {
+    background: rgba(0, 0, 0, .2) !important;
+}
