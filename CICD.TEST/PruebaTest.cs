@@ -22,6 +22,7 @@ namespace CICD.TEST
 		[TestMethod]
 		public void TestMethod()
 		{
+
 		}
 	}
 }
