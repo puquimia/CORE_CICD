@@ -1,5 +1,88 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+	Empleado eEmpleado = ViewData["Empleado"] as Empleado;
+}
+<h3 class="mt-4">Editar empleado</h3>
+<div class="row">
+	<div class="col-xl-8">
+		<div class="card mb-4">
+			<div class="card-header">
+				Información del empleado
+			</div>
+			<div class="card-body">
+				<div class="row">
+					<div class="col-sm-4">
+						<label class="form-label">Nombre <span class="Obligatorio">*</span></label>
+						<input type="text" class="form-control" id="txbNombre" value="@eEmpleado.Nombre" autocomplete="off">
+					</div>
+					<div class="col-sm-4">
+						<label class="form-label">Apellido paterno <span class="Obligatorio">*</span></label>
+						<input type="text" class="form-control" id="txbApellidoPaterno" value="@eEmpleado.ApellidoPaterno" autocomplete="off">
+					</div>
+					<div class="col-sm-4">
+						<label class="form-label">Apellido paterno <span class="Obligatorio">*</span></label>
+						<input type="text" class="form-control" id="txbApellidoMaterno" value="@eEmpleado.ApellidoMaterno" autocomplete="off">
+					</div>
+					<div class="col-sm-4">
+						<label class="form-label">Fecha de nacimiento <span class="Obligatorio">*</span></label>
+						<input type="date" class="form-control" value="@eEmpleado.FechaNacimiento.Value.ToString("yyyy-MM-dd")" id="txbFechaNacimiento">
+					</div>
+					<div class="col-sm-4">
+						<label class="form-label">Tipo documento identidad <span class="Obligatorio">*</span></label>
+						<select class="form-select" id="ddlTipoDocumento" asp-items="(List<SelectListItem>)@ViewData["TipoDocumentoIdentidad"]">
+							<option value="">&lt;SELECCIONE&gt;</option>
+						</select>
+					</div>
+					<div class="col-sm-4">
+						<label class="form-label">Documento identidad <span class="Obligatorio">*</span></label>
+						<input type="text" class="form-control" id="txbDocumentoIdentidad" value="@eEmpleado.DocumentoIdentidad" autocomplete="off">
+					</div>
+					<div class="col-sm-3">
+						<label class="form-label">Sexo <span class="Obligatorio">*</span></label>
+						<select class="form-select" id="ddlSexo" asp-items="(List<SelectListItem>)@ViewData["Sexo"]">
+							<option value="">&lt;SELECCIONE&gt;</option>
+						</select>
+					</div>
+					<div class="col-sm-3">
+						<label class="form-label">Teléfono</label>
+						<input type="text" class="form-control" id="txbTelefono" value="@eEmpleado.Telefono" autocomplete="off">
+					</div>
+					<div class="col-sm-3">
+						<label class="form-label">Estado civil <span class="Obligatorio">*</span></label>
+						<select class="form-select" id="ddlEstadoCivil" asp-items="(List<SelectListItem>)@ViewData["EstadoCivil"]">
+							<option value="">&lt;SELECCIONE&gt;</option>
+						</select>
+					</div>
+					<div class="col-sm-3">
+						<label class="form-label">Haber básico <span class="Obligatorio">*</span></label>
+						<input type="text" class="form-control" id="txbHaberBasico" value="@eEmpleado.HaberBasico" autocomplete="off">
+					</div>
+					<div class="col-sm-4">
+						<label class="form-label">Cargo <span class="Obligatorio">*</span></label>
+						<select class="form-select" id="ddlCargo" asp-items="(List<SelectListItem>)@ViewData["Cargo"]">
+							<option value="">&lt;SELECCIONE&gt;</option>
+						</select>
+					</div>
+					<div class="col-sm-8">
+						<label class="form-label">Correo</label>
+						<input type="text" class="form-control" id="txbCorreo" value="@eEmpleado.Correo" autocomplete="off">
+					</div>
+					<div class="col-sm-12">
+						<label class="form-label">Dirección</label>
+						<textarea class="form-control" rows="2" id="txbDireccion" autocomplete="off">@eEmpleado.Direccion</textarea>
+					</div>
+				</div>
+			</div>
+			<div class="card-footer">
+				<a id="btnGuardar" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> Guardar</a>
+				<a id="btnGuardar" class="btn btn-secondary" asp-controller="Empleados" asp-action="Index"><i class="fa-solid fa-reply"></i> Volver</a>
+			</div>
+		</div>
+	</div>
+</div>
+@section Scripts
+{
+	<script src="@Url.Content("~/scripts/js/empleado.js")"></script>
+	<script type="text/javascript">
+		idEmpleado = "@eEmpleado.Id";
+	</script>
 }
