@@ -1,1 +1,82 @@
-﻿<span>nuevo empleado</span>
+﻿<h3 class="mt-4">Nuevo empleado</h3>
+<div class="row">
+	<div class="col-xl-8">
+		<div class="card mb-4">
+			<div class="card-header">
+				Información del empleado
+			</div>
+			<div class="card-body">
+				<div class="row">
+					<div class="col-sm-4">
+						<label class="form-label">Nombre <span class="Obligatorio">*</span></label>
+						<input type="text" class="form-control" id="txbNombre" autocomplete="off">
+					</div>
+					<div class="col-sm-4">
+						<label class="form-label">Apellido paterno <span class="Obligatorio">*</span></label>
+						<input type="text" class="form-control" id="txbApellidoPaterno" autocomplete="off">
+					</div>
+					<div class="col-sm-4">
+						<label class="form-label">Apellido paterno <span class="Obligatorio">*</span></label>
+						<input type="text" class="form-control" id="txbApellidoMaterno" autocomplete="off">
+					</div>
+					<div class="col-sm-4">
+						<label class="form-label">Fecha de nacimiento <span class="Obligatorio">*</span></label>
+						<input type="date" class="form-control"  id="txbFechaNacimiento">
+					</div>
+					<div class="col-sm-4">
+						<label class="form-label">Tipo documento identidad <span class="Obligatorio">*</span></label>
+						<select class="form-select" id="ddlTipoDocumento" asp-items="(List<SelectListItem>)@ViewData["TipoDocumentoIdentidad"]">
+							<option value="">&lt;SELECCIONE&gt;</option>
+						</select>
+					</div>
+					<div class="col-sm-4">
+						<label class="form-label">Documento identidad <span class="Obligatorio">*</span></label>
+						<input type="text" class="form-control" id="txbDocumentoIdentidad" autocomplete="off">
+					</div>
+					<div class="col-sm-3">
+						<label class="form-label">Sexo <span class="Obligatorio">*</span></label>
+						<select class="form-select" id="ddlSexo" asp-items="(List<SelectListItem>)@ViewData["Sexo"]">
+							<option value="">&lt;SELECCIONE&gt;</option>
+						</select>
+					</div>
+					<div class="col-sm-3">
+						<label class="form-label">Teléfono</label>
+						<input type="text" class="form-control" id="txbTelefono" autocomplete="off">
+					</div>
+					<div class="col-sm-3">
+						<label class="form-label">Estado civil <span class="Obligatorio">*</span></label>
+						<select class="form-select" id="ddlEstadoCivil" asp-items="(List<SelectListItem>)@ViewData["EstadoCivil"]">
+							<option value="">&lt;SELECCIONE&gt;</option>
+						</select>
+					</div>
+					<div class="col-sm-3">
+						<label class="form-label">Haber básico <span class="Obligatorio">*</span></label>
+						<input type="text" class="form-control" id="txbHaberBasico" autocomplete="off">
+					</div>
+					<div class="col-sm-4">
+						<label class="form-label">Cargo <span class="Obligatorio">*</span></label>
+						<select class="form-select" id="ddlCargo" asp-items="(List<SelectListItem>)@ViewData["Cargo"]">
+							<option value="">&lt;SELECCIONE&gt;</option>
+						</select>
+					</div>
+					<div class="col-sm-8">
+						<label class="form-label">Correo</label>
+						<input type="text" class="form-control" id="txbCorreo" autocomplete="off">
+					</div>
+					<div class="col-sm-12">
+						<label class="form-label">Dirección</label>
+						<textarea class="form-control" rows="2" id="txbDireccion" autocomplete="off"></textarea>
+					</div>
+				</div>
+			</div>
+			<div class="card-footer">
+				<a id="btnGuardar" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> Guardar</a>
+				<a id="btnGuardar" class="btn btn-secondary" asp-controller="Empleados" asp-action="Index"><i class="fa-solid fa-reply"></i> Volver</a>
+			</div>
+		</div>
+	</div>
+</div>
+@section Scripts
+{
+	<script src="@Url.Content("~/scripts/js/empleado.js")"></script>
+}

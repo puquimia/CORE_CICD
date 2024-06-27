@@ -23,3 +23,68 @@
 div:where(.swal2-container).swal2-backdrop-show {
     background: rgba(0, 0, 0, .2) !important;
 }
+
+
+a.btn{
+    font-size: 14px;
+}
+
+table.datatable-table th td{
+    width: 100px !important;
+}
+.swal2-popup {
+    width: 25rem !important;
+}
+
+span.Obligatorio{
+    color: red;
+}
+
+.table-concept {
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    overflow: auto;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: solid 1px #d8d8d8;
+}
+
+    .table-concept table thead tr th, .table-concept table thead tr td {
+        color: #ffffff;
+        font-weight: normal;
+        background-color: #8f8f8f;
+        border-bottom: solid 2px #d8d8d8;
+        position: sticky;
+        top: 0;
+        text-align: left;
+        padding: 7px;
+        box-sizing: border-box;
+    }
+
+    .table-concept table tr td {
+        border: solid 1px #d8d8d8;
+        border-left: 0;
+        border-right: 0;
+        white-space: nowrap;
+    }
+    .table-concept table tbody tr:hover {
+        background-color: #ebebeb;
+    }
+    .table-concept table tbody tr:nth-child(2n) {
+        background-color: whitesmoke;
+    }
+
+    .table-concept table tbody tr td {
+        border: solid 1px #d8d8d8;
+        border-left: 0;
+        border-right: 0;
+        white-space: nowrap;
+        text-align: left;
+        padding: 5px;
+        box-sizing: border-box;
+    }
+.form-control:focus, .datatable-input:focus, .form-select:focus {
+    box-shadow: none !important;
+    border-color: #0D6EFD !important;
+}
