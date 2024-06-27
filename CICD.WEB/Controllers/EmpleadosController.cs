@@ -50,11 +50,11 @@ namespace CICD_WEB.Controllers
         #region Ajax
 
         [HttpPost]
-        public IActionResult Buscar()
+        public IActionResult Buscar(string nombreEmpleado)
         {
             try
             {
-                List<Empleados> lEmpleados = empleados.Buscar(string.Empty);
+                List<Empleados> lEmpleados = empleados.Buscar(nombreEmpleado);
                 return Json(from empleado in lEmpleados
                             select new
                             {
