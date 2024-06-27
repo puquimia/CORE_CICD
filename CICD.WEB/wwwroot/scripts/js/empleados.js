@@ -51,7 +51,7 @@ function Eliminar(jcmd) {
     }).then((result) => {
         if (result.isConfirmed) {
             jcode.ajax.metodo("Empleados", "Eliminar", dto, function (data, status) {
-                jcode.mensaje.success("Se eliminó correctamente.", function () {
+                jcode.mensaje.success("Eliminado!", "Se eliminó correctamente.", function () {
                     Buscar();
                 });
             });

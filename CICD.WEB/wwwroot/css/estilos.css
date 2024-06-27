@@ -88,3 +88,11 @@ span.Obligatorio{
     box-shadow: none !important;
     border-color: #0D6EFD !important;
 }
+
+.sb-sidenav-dark .sb-sidenav-menu .nav-link {
+    color: #bbc0c5;
+}
+
+.sb-sidenav-dark .sb-sidenav-menu .nav-link .sb-nav-link-icon {
+    color: #bbc0c5;
+}

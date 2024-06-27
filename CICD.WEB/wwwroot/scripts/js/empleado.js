@@ -109,10 +109,10 @@ function Guardar() {
     }
     jcode.ajax.metodo("Empleados", "Guardar", dto, function (data, status) {
         if (idEmpleado > 0) {
-            jcode.mensaje.success("Se guardó el empleado correctamente");
+            jcode.mensaje.success("", "Se guardó el empleado correctamente");
         }
         else {
-            jcode.mensaje.success("Se registró el empleado correctamente", function () {
+            jcode.mensaje.success("","Se registró el empleado correctamente", function () {
                 location.href = "/Empleados/Editar/" + data.Id;
             });
         }

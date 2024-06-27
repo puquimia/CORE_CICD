@@ -1,31 +1,42 @@
-﻿<div class="p-2">
-	<a id="btnMensaje" class="btn btn-primary">Mostar mensaje</a>
+﻿<h3 class="mt-4">Dashboard</h3>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">Bienvenidos al sistema!</li>
+</ol>
+<div class="row">
+    <div class="col-xl-3 col-md-6">
+        <div class="card bg-primary text-white mb-4">
+            <div class="card-body">Clientes</div>
+            <div class="card-footer d-flex align-items-center justify-content-between">
+                <a class="small text-white stretched-link" asp-controller="Clientes">Ver clientes</a>
+                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-md-6">
+        <div class="card bg-warning text-white mb-4">
+            <div class="card-body">Productos</div>
+            <div class="card-footer d-flex align-items-center justify-content-between">
+                <a class="small text-white stretched-link" asp-controller="Productos">Ver productos</a>
+                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-md-6">
+        <div class="card bg-success text-white mb-4">
+            <div class="card-body">Empleados</div>
+            <div class="card-footer d-flex align-items-center justify-content-between">
+                <a class="small text-white stretched-link" asp-controller="Empleados">Ver empleados</a>
+                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-md-6">
+        <div class="card bg-danger text-white mb-4">
+            <div class="card-body">Ventas</div>
+            <div class="card-footer d-flex align-items-center justify-content-between">
+                <a class="small text-white stretched-link" href="#">Ver ventas</a>
+                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+            </div>
+        </div>
+    </div>
 </div>
-
-@section Scripts
-{
-	<script type="text/javascript">
-		$(function () {
-            $("#btnMensaje").click(function () {
-                Swal.fire({
-                    title: 'Do you want Continue ?',
-                    text: "You need to pay extra amount",
-                    icon: 'success',
-                    showCancelButton: true,
-                    confirmButtonText: 'Yes'
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        Swal.fire(
-                            'Confirmed!',
-                            'You agreed to pay extra amount.',
-                            'success'
-                        )
-                    } else {
-                        console.log('clicked cancel');
-                    }
-                })
-            });
-		});
-
-	</script>
-}
