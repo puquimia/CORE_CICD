@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CICD.LIB.Datos
+
+
 {
 	public static class Conexion
 	{
