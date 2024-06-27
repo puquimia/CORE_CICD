@@ -43,7 +43,7 @@ namespace CICD.TEST
 			Cliente eCliente = new Cliente()
 			{
 				TipoCliente = 1,
-				Nombre = "Nombredemo cliente",
+				Nombre = "Juan Perez",
 				Documento = "874316",
 				Telefono = "75145665",
 				Estado = 1
@@ -68,7 +68,7 @@ namespace CICD.TEST
 			{
 				Id = idCliente,
 				TipoCliente = 2,
-				Nombre = "Nombredemo cliente",
+				Nombre = "Juan Perez",
 				Documento = "874316",
 				Telefono = "75145665",
 				NombreContacto = "Juana Pacheco",
