@@ -24,9 +24,9 @@ jcode.ajax = {
     }
 },
 jcode.mensaje = {
-    success: function (mensaje, callbackExito) {
+    success: function (titulo, mensaje, callbackExito) {
         Swal.fire({
-            title: "Guardado!",
+            title: titulo || "Guardado!",
             text: mensaje,
             icon: "success",
             timer: 2000,
@@ -66,7 +66,7 @@ jcode.validacion = {
         }
         return false;
     },
-    entero: function () {
+    entero: function (e) {
         var tecla = e.which || e.keyCode;
         if (!e.shiftKey && !e.altKey && !e.ctrlKey &&
             (
