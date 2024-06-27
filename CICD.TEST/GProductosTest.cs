@@ -16,6 +16,7 @@ namespace CICD.TEST
 	public class GProductosTest
 	{
 		public GProductos productos = null;
+		
 		[TestInitialize]
 		public void Setup()
 		{
@@ -28,6 +29,7 @@ namespace CICD.TEST
 			}
 			productos = new GProductos();
 		}
+		
 		[TestMethod]
 		[TestCategory("Productos")]
 		public void TraerProductosTest()
