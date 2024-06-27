@@ -4,6 +4,7 @@ using System.Runtime.Serialization;
 
 namespace CICD.LIB.Entidad.Tabla
 {
+   [Table("GEN.UnidadMedida")]
     public class UnidadMedida
     {
         #region Atributos
