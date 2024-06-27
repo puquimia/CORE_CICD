@@ -34,10 +34,10 @@
                     <tr>
                         <th style="width: 110px !important"></th>
                         <th>Nombre completo</th>
-                        <th>Fecha nacimiento</th>
+                        <th class="text-center">Fecha nacimiento</th>
                         <th>Sexo</th>
                         <th>Cargo</th>
-                        <th>Haber básico</th>
+                        <th class="text-end">Haber básico</th>
                     </tr>
                 </thead>
             <tbody>
@@ -48,10 +48,10 @@
                             <a class="btn btn-danger eliminar"><i class="fa-solid fa-trash-can"></i></a>
                         </td>
                         <td class="nombreEmpleado">{{>NombreCompleto}}</td>
-                        <td>{{>FechaNacimiento}}</td>
+                        <td class="text-center">{{>FechaNacimiento}}</td>
                         <td>{{>Sexo}}</td>
                         <td>{{>Cargo}}</td>
-                        <td>{{>HaberBasico}}</td>
+                        <td class="text-end">{{>HaberBasico}}</td>
                     </tr>
                 {{/for}}
             </tbody>
