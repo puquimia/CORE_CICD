@@ -1,30 +1,19 @@
 
 //#region VARIABLES
+var jtxbNombreEmpleado = $("");
 var jdivResultado = $("");
 var jtmpResultado = null;
 //#endregion
 
 //#region CARGA INICIAL
-$(function(){
-    const datatablesSimple = document.getElementById('datatablesSimple');
-    //if (datatablesSimple) {
-    //    new simpleDatatables.DataTable(datatablesSimple, {
-    //        labels: {
-    //            placeholder: "Buscar...",
-    //            perPage: "registros por página",
-    //            noRows: "No se encontraron registros",
-    //            info: "Mostrando {start} a {end} de {rows} empleados",
-    //        },
-    //        perPage: 5,
-    //        searchable: true,
-    //        fixedHeight: true,
-    //        responsive: true
-    //    });
-    //}
+$(function () {
+    jtxbNombreEmpleado = $("#txbNombreEmpleado");
     jdivResultado = $("#divResultado");
     jtmpResultado = $.templates("#tmpResultado");
     $("#divResultado").delegate("a.eliminar", "click", eliminarEmpleado_click);
     Buscar();
+    jtxbNombreEmpleado.focus();
+    $("#btnBuscar").click(Buscar);
 });
 //#endregion
 
@@ -37,7 +26,10 @@ function eliminarEmpleado_click(evt) {
 //#region MÉTODOS
 
 function Buscar() {
-    jcode.ajax.metodo("Empleados", "Buscar", {}, function (data, status) {
+    var dto = {
+        nombreEmpleado: $.trim(jtxbNombreEmpleado.val())
+    };
+    jcode.ajax.metodo("Empleados", "Buscar", dto, function (data, status) {
         jdivResultado.html(jtmpResultado.render({ Empleados: data }));
     });
 }

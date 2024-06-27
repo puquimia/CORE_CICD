@@ -84,3 +84,7 @@ span.Obligatorio{
         padding: 5px;
         box-sizing: border-box;
     }
+.form-control:focus, .datatable-input:focus, .form-select:focus {
+    box-shadow: none !important;
+    border-color: #0D6EFD !important;
+}
