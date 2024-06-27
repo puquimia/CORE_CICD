@@ -16,6 +16,7 @@ namespace CICD.TEST
 	public class GEmpleadosTest
 	{
 		public GEmpleados empleados = null;
+		
 		[TestInitialize]
 		public void Setup()
 		{
@@ -28,6 +29,7 @@ namespace CICD.TEST
 			}
 			empleados = new GEmpleados();
 		}
+		
 		[TestMethod]
 		[TestCategory("Empleados")]
 		public void TraerEmpleadosTest()
@@ -67,6 +69,7 @@ namespace CICD.TEST
 			empleados.Registrar(eEmpleado);
 			Assert.IsTrue(empleados.TraerEmpleados().Count() == 4);
 		}
+		
 		[TestMethod]
 		[TestCategory("Empleados")]
 		public void ModificarTest()
@@ -105,6 +108,7 @@ namespace CICD.TEST
 			Assert.AreEqual(eEmpleadoActualizado.FechaNacimiento, eEmpleado.FechaNacimiento);
 			Assert.AreEqual(eEmpleadoActualizado.HaberBasico, eEmpleado.HaberBasico);
 		}
+		
 		[TestMethod]
 		[TestCategory("Empleados")]
 		public void EliminarTest()
