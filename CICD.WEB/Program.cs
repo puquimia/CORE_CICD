@@ -21,6 +21,7 @@ builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddScoped<CICD.LIB.Logica.GVarios>();
 builder.Services.AddScoped<CICD.LIB.Logica.GEmpleados>();
 builder.Services.AddScoped<CICD.LIB.Logica.GCargos>();
+builder.Services.AddScoped<CICD.LIB.Logica.GClientes>();
 
 IConfiguration Configuration = builder.Configuration;
 Conexion.Initialize(Configuration);
