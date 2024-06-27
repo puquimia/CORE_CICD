@@ -1,5 +1,131 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿
+<h3 class="mt-4">Productos</h3>
+<div class="row">
+    <div class="p-2 text-end">
+    </div>
+    <div class="col-sm-6">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" id="txbNombreProducto" placeholder="Busque por código o nombre" aria-describedby="btnBuscar">
+            <a class="btn btn-primary" id="btnBuscar"><i class="fa fa-search"></i> Buscar</a>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="p-2 text-end">
+            <a class="btn btn-primary" id="btnNuevoProducto"><i class="fa-solid fa-plus"></i> Nuevo producto</a>
+        </div>
+    </div>
+</div>
+<div class="card mb-4">
+    <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+        Productos encontrados
+    </div>
+    <div class="card-body">
+        <div id="divResultado"></div>
+    </div>
+</div>
+<script type="text/x-jsrender" id="tmpResultado">
+    {{if Productos.length>0}}
+    <div class="table-concept">
+        <table style="width:100%" >
+             <thead>
+                    <tr>
+                        <th style="width: 110px !important"></th>
+                        <th>Código</th>
+                        <th>Nombre</th>
+                        <th class="text-center">Stock mínimo</th>
+                        <th>Marca</th>
+                        <th>Categoría</th>
+                        <th class="text-center">Estado</th>
+                    </tr>
+                </thead>
+            <tbody>
+                {{for Productos}}
+                    <tr id="{{>Id}}">
+                        <td style="width: 110px !important">
+                            <a class="btn btn-primary editar"><i class="fa fa-pencil"></i></a>
+                            <a class="btn btn-danger eliminar"><i class="fa-solid fa-trash-can"></i></a>
+                        </td>
+                        <td >{{>Codigo}}</td>
+                        <td class="nombre">{{>Nombre}}</td>
+                        <td class="text-center">{{>StockMinimo}}</td>
+                        <td>{{>NombreMarca}}</td>
+                        <td>{{>NombreCategoria}}</td>
+                        <td class="text-center">{{>DescripcionEstado}}</td>
+                    </tr>
+                {{/for}}
+            </tbody>
+        </table>
+    </div>
+    {{else}}
+    <div class="alert alert-warning" role="alert">No se encontraron empleados registrados.</div>
+    {{/if}}
+</script>
+
+
+<!-- Modal -->
+<div class="modal fade" id="divProducto" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Nuevo producto</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label class="form-label">Código <span class="Obligatorio">*</span></label>
+                        <input type="text" class="form-control" id="txbCodigo" autocomplete="off">
+                    </div>
+                    <div class="col-sm-6">
+                    </div>
+                    <div class="col-sm-12">
+                        <label class="form-label">Nombre <span class="Obligatorio">*</span></label>
+                        <input type="text" class="form-control" id="txbNombre" autocomplete="off">
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="form-label">Precio venta <span class="Obligatorio">*</span></label>
+                        <input type="text" class="form-control" id="txbPrecioVenta" autocomplete="off">
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="form-label">Stock mínimo <span class="Obligatorio">*</span></label>
+                        <input type="text" class="form-control" id="txbStockMinimo" autocomplete="off">
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="form-label">Unidad de medida <span class="Obligatorio">*</span></label>
+                        <select class="form-select" id="ddlUnidadMedida" asp-items="(List<SelectListItem>)@ViewData["UnidadMedida"]">
+                            <option value="">&lt;SELECCIONE&gt;</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="form-label">Marca <span class="Obligatorio">*</span></label>
+                        <select class="form-select" id="ddlMarca" asp-items="(List<SelectListItem>)@ViewData["Marca"]">
+                            <option value="">&lt;SELECCIONE&gt;</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="form-label">Categoria <span class="Obligatorio">*</span></label>
+                        <select class="form-select" id="ddlCategoria" asp-items="(List<SelectListItem>)@ViewData["Categoria"]">
+                            <option value="">&lt;SELECCIONE&gt;</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="form-label">Estado <span class="Obligatorio">*</span></label>
+                        <select class="form-select" id="ddlEstado" asp-items="(List<SelectListItem>)@ViewData["Estado"]">
+                            <option value="">&lt;SELECCIONE&gt;</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnGuardar">Guardar</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script src="@Url.Content("~/scripts/js/productos.js")"></script>
 }
